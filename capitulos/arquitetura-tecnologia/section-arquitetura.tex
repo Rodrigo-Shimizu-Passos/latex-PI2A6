@@ -1,0 +1,18 @@
+\section{Arquitetura}
+
+Nesta seção, proporciona-se uma visão abrangente da arquitetura da aplicação, englobando os padrões e princípios de design adotados na concepção da solução. Além disso, são detalhadas as tecnologias, \textit{\gls{Frameworks}} e bibliotecas utilizados no desenvolvimento da aplicação, acompanhados das considerações referentes à segurança e escalabilidade incorporadas na arquitetura da solução.
+
+\subsection{Desenho da aplicação}
+
+Para o projeto em questão, adotou-se uma abordagem convencional de arquitetura web cliente-servidor, em que a interface \textit{\gls{Front-end}} se interconecta com a \ac{api} \textit{\gls{Back-end}} por meio dos protocolos HTTP disponíveis. É crucial ressaltar que uma \ac{api} externa fornecida pela \textit{\gls{Rawg}} foi empregada, ampliando significativamente a disponibilidade de informações acerca de jogos, como datas de lançamento, avaliações, plataformas e outros dados relevantes. Além disso, foi utilizada a \ac{api} do \gls{MercadoPago} para auxiliar no processamento de transações monetárias para as assinaturas premium. A Figura \ref{DesenhoArquitetura} oferece uma representação completa do diagrama arquitetural implementado no sistema.
+
+\begin{figure}[H]
+    \centering
+	\caption{Desenho da Arquitetura}
+    \label{DesenhoArquitetura}
+    \includegraphics[scale = 0.37]{imagens/arquitetura/desenho_arquitetura.jpg}	
+    \fonte{Os Autores}
+\end{figure}
+
+% Tecnologias e Ferramentas
+\input{capitulos/arquitetura-tecnologia/section-ferramentas}

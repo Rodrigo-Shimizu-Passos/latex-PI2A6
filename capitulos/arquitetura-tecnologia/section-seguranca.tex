@@ -1,0 +1,62 @@
+\section{Critérios de Segurança/Privacidade/Legislação}
+Esta seção tem como objetivo descrever, em termos gerais, os elementos de segurança implementados no projeto, bem como os critérios de privacidade seguidos e uma visão geral sobre seu enquadramento nos requisitos da \ac{lgpd}.
+
+\subsection{Segurança Implantada para API Externa}
+
+A obtenção de acesso à API da \textit{\gls{Rawg}} demanda a alocação de um domínio de site associado e, por este motivo, o domínio da \textit{GameLocker} foi estabelecido para esse propósito específico. Adicionalmente, como parte desse processo, foi criada uma chave de autenticação, a qual é necessária para ser inclusa em todas as requisições direcionadas à \ac{api}.
+
+Nesse contexto, surge a necessidade de garantir a segurança da chave de autenticação. Tradicionalmente, as requisições à \ac{api} externa são efetuadas a partir do \textit{\gls{Front-end}} do projeto. No entanto, na presente situação, devido à sensibilidade da chave de autenticação, medidas adicionais se tornaram essenciais. Permitir que qualquer usuário do site a obtenha ao realizar requisições à \textit{GameLocker} seria um risco considerável.
+
+Portanto, com a segurança em destaque, a decisão unânime foi a de implementar as requisições à \ac{api} da \textit{\gls{Rawg}} por meio do \textit{\gls{Back-end}}. Esse enfoque se revelou crucial para salvaguardar a chave de autenticação. Ao adotar essa abordagem, a chave não fica exposta às requisições realizadas pelos usuários no site, mitigando a possibilidade de utilização maliciosa. Em síntese, essa estratégia se alinha com as melhores práticas de segurança, garantindo a integridade e a confidencialidade da chave de autenticação, assim como a proteção do projeto em relação a potenciais atividades maliciosas.
+
+\subsection{Segurança no Back-end}
+
+Toda aplicação que almeja conquistar uma posição no mercado atual deve imperativamente oferecer uma camada de segurança robusta, com ênfase na autorização e autenticação de usuários. Nesse contexto, é fundamental reiterar que a autenticação consiste na validação da identidade de um usuário, assegurando a correspondência entre a alegação de identidade e a real identificação. Paralelamente, a autorização se refere aos recursos específicos que um usuário autenticado está habilitado a acessar.
+
+Na \ac{api} concebida com a utilização da tecnologia \textit{\gls{.NET}}, optou-se por integrar o pacote \textit{\gls{Identity}}, desenvolvido e mantido pela \textit{\gls{Microsoft}}. O \textit{\gls{Identity}} oferece uma ampla gama de funcionalidades que simplificam a incorporação e o uso de sistemas de autenticação e autorização no contexto da aplicação. O primeiro aspecto de segurança abordado no âmbito do \textit{\gls{Back-end}} está relacionado ao procedimento de cadastro de usuários, o qual contempla diversas dimensões cruciais em termos de segurança.
+
+Um exemplo notável é a exigência de que a senha atenda a critérios predefinidos, garantindo a solidez do registro do usuário na plataforma. Uma vez concluído o cadastro, o usuário é conduzido ao processo de autenticação no sistema, utilizando suas credenciais de e-mail e senha. É relevante destacar que os endereços de e-mail são exclusivos no ambiente da aplicação, sendo que a efetivação do login somente é possível mediante o fornecimento das credenciais precisas.
+
+Com o êxito na autenticação, o sistema gera um componente de importância ímpar para o \textit{\gls{Front-end}} do projeto, denominado \textit{token} de autenticação do usuário. Visando assegurar uma proteção amplificada da aplicação, o acesso a qualquer recurso na \ac{api} do projeto requer a submissão do \textit{token} correspondente ao usuário. Tal \textit{token} é então validado no âmbito do \textit{\gls{Back-end}} do sistema, garantindo a integridade do processo de autorização e a salvaguarda dos recursos acessados.
+
+\subsection{Segurança no Front-End}
+
+No âmbito do desenvolvimento da aplicação, a segurança referente ao \textit{\gls{Front-end}} foi abordada com seriedade e profissionalismo, sendo implementadas uma série de medidas para salvaguardar informações pessoais e preservar a integridade das contas dos usuários. A seguir, são apresentadas algumas das principais ações de segurança adotadas:
+
+\begin{itemize}
+    \item Autenticação Convencional: Foi adotado um sistema de cadastro e login convencional para autenticar os usuários. Tal abordagem exige que cada usuário crie uma conta exclusiva com um nome de usuário e senha. As senhas são armazenadas de maneira criptografada no banco de dados, o que previne acessos não autorizados, garantindo a proteção da informação;
+\end{itemize}
+
+\begin{itemize}
+    \item Certificado \ac{ssl}: A aplicação incorpora um certificado \ac{ssl} para estabelecer uma conexão segura entre o navegador do usuário e o servidor. Essa camada adicional de segurança cifra as informações transmitidas, incluindo dados pessoais e credenciais de login, para impedir qualquer tentativa de interceptação por terceiros mal-intencionados. A utilização do \ac{ssl} promove a confidencialidade e a integridade dos dados durante a interação entre o usuário e o servidor;
+\end{itemize}
+
+\begin{itemize}
+    \item Protocolo \ac{https}: O protocolo \ac{https} foi adotado para todas as transações efetuadas no site. O \ac{https} é uma variante segura do protocolo \ac{http}, e sua presença indica que a comunicação entre o navegador do usuário e o servidor está protegida por criptografia. Esse enfoque resguarda as informações em trânsito, impedindo qualquer interceptação ou manipulação indesejada.
+\end{itemize}
+
+Adicionalmente a essas iniciativas, foram implementadas outras práticas de segurança recomendadas, incluindo atualizações regulares do software tanto do site quanto do servidor. Além disso, um sistema de monitoramento para detectar atividades suspeitas foi estabelecido, aprimorando a proteção e a vigilância contínua do ambiente digital.
+
+\subsection{Segurança nos Repositórios}
+
+O projeto é constituído por dois repositórios, nos quais os códigos do projeto são alocados e conservados. Enquanto um destes repositórios acolhe o código do \textit{\gls{Back-end}}, o outro desempenha a função de custodiar o código do \textit{\gls{Front-end}}. Com a finalidade de salvaguardar a integridade desses repositórios, eles são configurados como privados, uma medida que atua como uma barreira eficaz contra acessos, visualizações ou modificações por parte de indivíduos externos. Destarte, somente os membros integrantes do projeto ostentam a prerrogativa de autorização para adentrar e utilizar os recursos embutidos nesses repositórios.
+
+\subsection{Segurança no Azure}
+
+O processo de \textit{\gls{Deploy}} do projeto é executado através da plataforma de computação em nuvem da \textit{\gls{Azure}}. A própria plataforma \textit{\gls{Azure}} disponibiliza uma série de recursos dedicados à segurança para seus usuários, e esses recursos são integralmente empregados no âmbito deste projeto.
+
+O primeiro recurso destaca-se por assegurar a proteção do acesso aos serviços hospedados na nuvem. Essa salvaguarda é estabelecida ao restringir o acesso somente a pontos críticos e essenciais, consolidando assim a salvaguarda dos serviços associados ao projeto.
+
+Adicionalmente, uma segunda medida de segurança é aplicada através da limitação do \textit{\gls{Deploy}} do projeto na plataforma \textit{\gls{Azure}} exclusivamente para as máquinas que pertencem aos membros participantes do projeto. Essa estratégia contribui para acrescentar uma camada adicional de proteção ao processo de \textit{\gls{Deploy}}, mitigando potenciais riscos ao controlar estritamente o escopo das máquinas autorizadas a realizar o \textit{\gls{Deploy}} na plataforma.
+
+\subsection{Lei Geral de Proteção de Dados}
+A \ac{lgpd}, de acordo com o Congresso Nacional, "(...) dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural." \cite{lgpd}.
+
+Portanto, durante o desenvolvimento do projeto, foram tomadas decisões e
+medidas de segurança para que ele se encaixasse e estivesse em conformidade com essa legislação, tendo foco em uma experiência segura para os usuários.
+
+Os dados pessoais coletados para o cadastro, que são: nome completo, \textit{email}, telefone e data de nascimento, não se enquadram como dados pessoais sensíveis segundo o Art. 5°, II da \ac{lgpd} e, por este motivo, grande parte das restrições legislativas impostas não afetam diretamente o projeto.
+
+Além disso, a aplicação permite o acesso aos dados pessoais fornecidos, bem como sua alteração, enquadrando-se no princípio de boa-fé do livre acesso aos dados, definido no Art. 6°,IV. A aplicação requisitará consentimento dos usuários para armazenar os dados fornecidos e manipulá-los como necessário para o funcionamento do sistema, o que confere a ela conformidade com o Art. 7°,I e Art. 6°,I.
+
+Nos apêndices deste documento, no capítulo \ref{termos-e-condicoes}, estão detalhados os termos e condições com os quais o usuário precisará concordar para utilizar a aplicação.

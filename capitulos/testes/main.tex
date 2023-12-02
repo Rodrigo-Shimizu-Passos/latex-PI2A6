@@ -1,0 +1,37 @@
+\chapter{Testes}
+Este capítulo tem como objetivo apresentar os testes realizados durante o desenvolvimento do projeto, que auxiliaram a fazer um controle de qualidade da aplicação com maior precisão.
+
+% Testes Unitários
+\input{capitulos/testes/testes-unitarios}
+
+% Planos de Teste
+\input{capitulos/testes/plano-testes}
+
+\section{Testes de Segurança}
+Esta seção demonstra os testes de segurança nos quais a aplicação deve ser aprovada, de acordo com as regras da disciplina, buscando garantir uma maior proteção do sistema.
+
+\subsection{Teste de SSL}
+Foi utilizada a plataforma SSL Labs \url{https://www.ssllabs.com/ssltest/} para realização deste teste.
+
+Na figura \ref{testeSSL}, é possível observar que a aplicação GameLocker recebeu nota A+ na verificação realizada, demonstrando uma forte segurança na comunicação entre o domínio do site e os navegadores, de forma criptografada.
+
+\begin{figure}[H]
+        \center
+	\caption{\label{fig_sge20}Resultado do teste de SSL}
+    \includegraphics[scale=0.50]{imagens/testes/TESTESSL.png}
+    \label{testeSSL}
+	\fonte{Os autores}
+\end{figure}
+
+\subsection{Teste de Headers}
+Este teste tem como objetivo verificar a segurança dos \gls{Headers} nas requisições \ac{https} realizadas pela aplicação. Para isso, foi utilizada a plataforma Security Headers, disponível em: \url{securityheaders.io}
+
+A figura \ref{testeHeaders} apresenta o resultado do teste realizado, indicando um nível satisfatório de segurança nos \gls{Headers} utilizados na aplicação.
+
+\begin{figure}[H]
+    \center
+	\caption{\label{fig_sge20}Resultado do teste de Headers}
+    \includegraphics[scale=0.45]{imagens/testes/TESTEHEADERS.png}
+    \label{testeHeaders}
+	\fonte{Os autores}
+\end{figure}

@@ -1,0 +1,75 @@
+\clearpage
+\section{Manutenibilidade}
+
+Com o objetivo de garantir a longevidade da aplicação e facilitar a implementação de novas funcionalidades, torna-se crucial que a equipe de desenvolvimento siga padrões, princípios e boas práticas estabelecidos. Adicionalmente, é importante mencionar que a implementação de boas práticas não se limita apenas à codificação, mas se estende também à documentação, comunicação e colaboração entre os membros da equipe.
+
+\subsection{Ferramentas para Testes automatizados e Análise Estática}
+
+Para a realização dos testes automatizados no \textit{\gls{Back-end}}, será utilizado o \textit{\gls{Xunit}}, uma ferramenta de código aberto empregada para a execução de testes automatizados. Essa ferramenta oferece recursos avançados, como a paralelização de testes e a capacidade de executá-los em diversas plataformas. Além disso, o \textit{\gls{Xunit}} possui uma documentação abrangente e integração com a \ac{IDE} do \textit{\gls{VisualStudio}}, que será utilizada no desenvolvimento.
+
+\subsection{Code Convention}
+
+Para o desenvolvimento do \textit{\gls{Back-end}}, adotou-se a convenção de codificação da linguagem \textit{\gls{Csharp}}, conhecida como \textit{Csharp Coding Conventions}. Essa convenção foi criada e é mantida pela \textit{\gls{Microsoft}}, empresa responsável pela criação da linguagem de programação \textit{\gls{Csharp}}. É possível encontrar a documentação completa dessa convenção online. Entre as principais definições dessa convenção, destacam-se:
+
+\begin{itemize}
+\item Nomes de variáveis devem ser descritivos, utilizando-se sempre \texttt{\gls{CamelCase}} (inicia com letra minúscula);
+\item Nomes de classes e tipos devem ser descritivos, iniciando com letra maiúscula e utilizando \texttt{\gls{PascalCase}};
+\item Métodos devem ser nomeados utilizando verbos, seguidos de um substantivo ou frase descritiva;
+\item Utilize indentação de 4 espaços, sem tabulação;
+\item Chaves devem ser abertas na mesma linha que o código que as precede e fechadas em uma nova linha;
+\item Cada instrução deve ser escrita em uma linha separada;
+\item A largura da linha não deve ultrapassar 120 caracteres;
+\item Utilize comentários em linha para explicar partes do código que possam ser difíceis de entender;
+\item Use espaços em branco para separar operadores e elementos do código;
+\item Utilize a palavra-chave \textit{\texttt{this}} para referenciar membros da classe atual.
+\end{itemize}
+
+Para o desenvolvimento do \textit{\gls{Front-end}}, foi utilizado o \textit{Google TypeScript Style Guide}, que é um guia de estilo de codificação para o \textit{\gls{Typescript}}, uma linguagem de programação desenvolvida pela \textit{\gls{Microsoft}}. Esse guia é mantido pelo \textit{Google} e fornece diretrizes para padronizar a escrita de código em projetos que utilizam \textit{\gls{Typescript}}.
+
+Algumas das principais características desse guia são:
+
+\begin{itemize}
+\item Uso de \texttt{\gls{CamelCase}} para nomes de variáveis e \texttt{\gls{PascalCase}} para nomes de tipos e classes;
+\item Uso de \textit{\texttt{const}} em vez de \textit{\texttt{let}} sempre que possível;
+\item Uso de tipos explícitos em vez de inferência de tipos sempre que possível;
+\item Evitar o uso de tipos \textit{\texttt{any}} sempre que possível;
+\item Uso de \texttt{===} em vez de \texttt{==} para comparações;
+\item Evitar o uso de \textit{\texttt{namespace}} e, em vez disso, utilizar módulos;
+\item Uso de \texttt{interface} para definição de tipos e estruturas de objetos;
+\item Utilização de apóstrofo para strings;
+\item Uso de \textit{arrow functions} em vez de function expressions sempre que possível;
+\item Uso de \textit{\texttt{async/await}} em vez de \textit{callbacks} para operações assíncronas.
+\end{itemize}
+
+\subsection{Integração Continua}
+
+O \ac{ci}/\ac{cd} do GitHub é uma ferramenta amplamente utilizada em projetos de software em todo o mundo, sendo uma opção confiável e robusta para a implementação de processos de \ac{ci}/\ac{cd}. Com sua flexibilidade e facilidade de configuração, é possível acelerar a entrega de software com qualidade e eficiência.
+
+Dentre os processos que podem ser integrados na integração contínua com o \ac{ci}/\ac{cd} do GitHub, encontram-se a restauração/instalação de dependências, a compilação, a execução de testes automatizados e a geração de artefatos para implantação. Essa integração permite garantir a qualidade do código e reduzir o tempo de entrega de novas funcionalidades.
+
+A aplicação do \ac{ci}/\ac{cd} do GitHub no projeto será realizada através da configuração de um servidor de integração contínua, com o objetivo de automatizar o processo de \textit{build} e testes. A cada \textit{commit} efetuado por um membro da equipe em sua respectiva \textit{branch}, o \ac{ci}/\ac{cd} do GitHub assumirá automaticamente a responsabilidade de realizar o \textit{build} do código e executar os testes automatizados.
+
+\subsection{Design Patterns e Princípios de Design de Software}
+
+No desenvolvimento do \textit{\gls{Front-end}} e do \textit{\gls{Back-end}}, foram seguidos dois conjuntos de princípios e diretrizes de design de software: o \textit{\gls{CleanCode}} e o \textit{\gls{SOLID}}. O \textit{\gls{SOLID}} e o \textit{\gls{CleanCode}} são dois conceitos fundamentais no desenvolvimento de software orientado a objetos que têm como objetivo aprimorar a qualidade e a legibilidade do código. Ambos são de extrema importância, pois tornam o código mais fácil de compreender, modificar e manter ao longo do tempo.
+
+Foram estritamente seguidas as orientações preconizadas pelo \textit{\gls{CleanCode}}, com o propósito de discernir setores passíveis de aprimoramento no código preexistente e inaugurar o processo de refatoração. O intento primordial reside na simplificação das funções de caráter intrincado, na atribuição de denominações mais expressivas às variáveis e na reconfiguração de segmentos enredados do código-fonte. O cerne desse empenho é alinhar o código com as práticas mais salutares de desenvolvimento, otimizando assim a legibilidade, a manutenibilidade e a compreensibilidade do sistema como um todo.
+
+Foram diligentemente incorporados sólidos padrões de design, reconhecidos como os princípios \textit{\gls{SOLID}}, para estabelecer os alicerces essenciais na arquitetura deste projeto. Estes princípios fundados na orientação a objetos, abarcando os preceitos de \ac{srp}, \ac{ocp}, \ac{lsp}, \ac{isp} e \ac{dip}, foram criteriosamente adotados com a finalidade precípua de fomentar uma estrutura sólida e altamente flexível.
+
+\subsubsection{Clean Code}
+
+O \textit{\gls{CleanCode}} engloba um conjunto criterioso de orientações e práticas concebidas com a finalidade precípua de aprimorar a legibilidade, a compreensibilidade e a manutenibilidade do código de um software. Dentre as diretrizes preeminentes, evidenciam-se as seguintes:
+
+\begin{itemize}
+    \item Atribuição de denominações de cunho substancial a classes, métodos, propriedades e variáveis;
+    \item Eliminação de redundâncias no código-fonte;
+    \item Concepção de métodos breves, os quais ostentam uma única incumbência;
+    \item Elaboração de código que é simultaneamente simples e de natureza acessível para compreensão.
+\end{itemize}
+
+\subsubsection{SOLID}
+
+O acrônimo \textit{\gls{SOLID}}, que representa um conjunto de cinco princípios fundamentais para o desenvolvimento de software orientado a objetos, é amplamente reconhecido e empregado na indústria de tecnologia. Estes princípios e diretrizes têm como objetivo central a criação de código-fonte de software caracterizado por sua modularidade, flexibilidade e facilidade de manutenção.
+
+Tais princípios desempenham um papel crucial ao auxiliar os desenvolvedores na elaboração de sistemas que apresentam não apenas flexibilidade e escalabilidade, mas também facilidade de manutenção. Através da promoção da coesão entre os componentes e da minimização do acoplamento indesejado, esses princípios fornecem orientações valiosas para a construção de sistemas de software robustos e sustentáveis.

@@ -1,0 +1,106 @@
+\section{Histórias de usuário}
+
+\begin{enumerate}
+  \item \textbf{Cadastro}
+  
+  \textbf{Caso:} Eu, como jogador de jogos digitais, quero realizar o cadastro no site \textit{GameLocker} para fazer o gerenciamento de meus jogos e conhecer a comunidade de \textit{players}.
+  
+  \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item O usuário deve conseguir fazer o cadastro;
+      \item O usuário deve possuir no mínimo 16 anos;
+      \item E-mail do usuário deve ser único no sistema;
+      \item Username do usuário deve ser único no sistema;
+      \item A senha deve seguir os padrões necessários do site.
+  \end{itemize}
+  
+  \item \textbf{Login}
+
+  \textbf{Caso:} Eu, como jogador de jogos digitais, quero realizar o login no site GameLocker para fazer o gerenciamento de meus jogos e conhecer a comunidade de \textit{players}.
+  
+  \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item O usuário deve conseguir fazer o login;
+      \item O usuário deve fornecer e-mail e senha corretos;
+      \item O usuário não deve conseguir acessar os recursos sem estar logado;
+      \item O usuário não deve conseguir fazer login com credenciais erradas.
+  \end{itemize}
+  
+   
+  \item \textbf{Adicionar Jogo/Review}
+
+  \textbf{Caso:} Eu, como jogador de jogos digitais, quero poder adicionar a review de um jogo que estou jogando, além de oferecer uma nota e comentários para esse jogo.
+
+  \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item O usuário deve conseguir adicionar uma review;
+      \item O usuário deve conseguir colocar uma nota e um comentário para o jogo escolhido;
+      \item O usuário deve selecionar um status para o jogo, o padrão deve ser jogando;
+      \item O jogo adicionado pelo usuário deve ir para seu perfil.
+  \end{itemize}
+
+  \item \textbf{Visualizar reviews}
+
+  \textbf{Caso:} Eu, como usuário que fiz reviews, quero visualizar todas minhas reviews feitas em meu perfil, para poder gerenciar elas de forma objetiva.
+
+  \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item O usuário deve conseguir visualizar todas suas reviews;
+      \item O usuário deve conseguir filtras as reviews por abas relacionadas a seus status.
+  \end{itemize}
+
+  \item \textbf{Editar Review}
+
+  \textbf{Caso:} Eu, como usuário que adicionei uma review, quero ter a chance de editar os dados dela.
+
+  \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item O usuário deve conseguir clicar na review escolhida e abrir um modal para editar a review;
+      \item O usuário deve conseguir editar os campos liberados da review;
+      \item As edições não devem ser persistidas caso o usuário não clique em salvar;
+      \item Ao clicar em salvar, as edições devem ser persistidas, uma mensagem de sucesso deve aparecer e o usuário deve ser redirecionado para a listagem.
+  \end{itemize}
+
+  \item \textbf{Remover Review}
+
+  \textbf{Caso:} Eu, como usuário que adicionei uma review errada, quero poder remover ela de forma fácil e rápida.
+
+  \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item Ao clicar em remover, a review deve ser removida do banco de dados;
+      \item Ao fazer a remoção, usuário deve ser redirecionado para a listagem atualizada.
+  \end{itemize}
+
+  \item \textbf{Filtrar Jogos Adicionados}
+
+  \textbf{Caso:} Eu, como usuário possuo vários jogos adicionados, quero filtrar eles por nome do jogo.
+
+  \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item Deve ter na tela uma barra de pesquisa para digitação do usuário;
+      \item Filtragem deve ocorrer enquanto o usuário escreve, de forma a aparecer os resultados atualizados;
+      \item Deve ter um ícone de apagar para caso o usuário queira remover o texto digitado;
+      \item Ao remover o texto digitado, a listagem deve voltar ao normal;
+      \item Caso não possua nenhuma correspondência para o texto digitado, deve aparecer uma mensagem informativa.
+  \end{itemize}
+
+  \item \textbf{Criar arena de jogos}
+
+   \textbf{Caso:} Eu, como usuário premium, quero criar uma arena de um jogo para fazer um torneio entre jogadores.
+
+   \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item Somente usuários premium podem criar arena;
+      \item O administrador precisar definir algumas configurações obrigatórias no momento de criação de arena;
+  \end{itemize}
+
+  \item \textbf{Entrar na arena de jogos}
+
+   \textbf{Caso:} Eu, como usuário que estou procurando amigos para jogar, quero entrar numa arena de algum jogo.
+
+   \textbf{Critérios de Aceitação:}
+  \begin{itemize}
+      \item Deve ter a listagem de arenas disponíveis;
+  \end{itemize}
+  
+\end{enumerate}

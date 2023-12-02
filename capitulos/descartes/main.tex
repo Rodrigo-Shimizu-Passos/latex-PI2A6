@@ -1,0 +1,25 @@
+\chapter{Descartes/Escolhas}
+
+Este capítulo busca descrever as mudanças relacionadas às regras de negócio e funcionalidades do projeto, divididas em descartes e escolhas. Além disso, são citadas algumas implementações futuras, que podem ser incluídas no projeto mesmo após sua conclusão.
+
+\section{Descartes}
+
+Uma funcionalidade que foi deliberadamente descartada reside na capacidade de conectar deliberadamente as contas e os perfis dos usuários com suas conquistas e progressos em outras plataformas, exemplificadas pela \textit{\gls{Steam}} e \textit{\gls{Microsoft}}. A incorporação dessa funcionalidade implicaria em um grau considerável de complexidade, agravado pelo desafio de obter acesso à \ac{api} da \textit{\gls{Steam}}, uma circunstância que poderia acarretar complicações suplementares no decorrer do processo de desenvolvimento do projeto. Portanto, essa funcionalidade foi excluída da abordagem, a fim de garantir um escopo mais gerenciável e alinhado com os objetivos principais estabelecidos.
+
+A implementação do anúncio \textit{\gls{GoogleAdSense}} tornou-se inviável devido a problemas existentes, notadamente a insuficiência de tráfego no site. A ausência de tráfego relevante é um problema complexo, envolvendo questões como otimização de mecanismos de busca (SEO), qualidade do conteúdo e estratégias de marketing digital. Nesse cenário, tornou-se claro que a implementação do \textit{AdSense} não era viável no momento presente. O baixo tráfego do site comprometeria a eficácia dos anúncios, levando a baixas taxas de visualizações e, por conseguinte, a receitas insignificantes.
+
+Outra funcionalidade adicional que foi descartada relaciona-se com a disponibilização de notícias relevantes no contexto dos jogos eletrônicos. Isso abrangeria aspectos como a repercussão de novos lançamentos e eventos relacionados ao universo dos jogos.
+
+\section{Escolhas}
+
+A escolha de se implementar um sistema \textit{Web} está diretamente relacionada ao fato de que a grande maioria dos jogos está disponível para PC, além da forte presença da \textit{\gls{Steam}}, que comumente é acessada em computadores. Por isso, espera-se que a maioria dos usuários da plataforma GameLocker a acessem em navegadores \textit{Web}.%INCLUIR FONTE
+
+Outra decisão a se apontar foi a de não armazenar o histórico de mensagens da arena de jogos, que se dá por dois fatores principais: recursos computacionais e complexidade de desenvolvimento. O primeiro se justifica pelo fato de que manter armazenar um número muito elevado de mensagens da arena poderia ser muito custoso computacionalmente. O segundo tem relação com o cronograma do projeto, já que desenvolver uma maneira de armazenar essas mensagens poderia atrasar os prazos definidos.
+
+\section{Implementações Futuras}
+
+Como implementação futura, é possível citar a publicação de jogos diretamente na plataforma, permitindo que pequenos desenvolvedores de jogos conseguissem um espaço para divulgá-los livremente. Esta funcionalidade foi sugerida pelo professor orientador do primeiro semestre da disciplina, Carlos Henrique Veríssimo, como uma maneira de propagar os jogos desenvolvidos por alunos de cursos técnicos.
+
+Apesar do \textit{\gls{GoogleAdSense}} ter sido descartado, a equipe tem o planejamento de implementar essa estratégia de anúncio assim que o tráfego da aplicação melhorar. A implementação do \textit{\gls{GoogleAdSense}}, foram considerados fatores cruciais, como o perfil do público-alvo da aplicação, de modo a aproveitar as oportunidades de monetização e direcionar anúncios relevantes aos visitantes da plataforma, proporcionando uma experiência agradável e maximizando o potencial de geração de receita. Foi estabelecido adotar o modelo de remuneração \ac{cpm} como forma de monetização pelo número de vezes que os anúncios seriam exibidos na plataforma, a cada mil impressões.
+
+Outra implementação futura seria a disponibilização de uma versão \textit{mobile} da aplicação, para assim atingir uma maior gama de usuários e otimizando a usabilidade do sistema.
